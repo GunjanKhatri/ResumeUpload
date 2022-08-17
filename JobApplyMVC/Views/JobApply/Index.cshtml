@@ -1,0 +1,47 @@
+﻿@model JobApplyMVC.Models.CandidateViewModel
+@using JobApplyMVC.Helper
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "JobApply", FormMethod.Post, new
+{
+    enctype = "multipart/form-data"
+}))
+{
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(u => u.FirstName)
+        @Html.TextBoxFor(u => u.FirstName, new { @class = "form-control" })
+
+
+    </div>
+
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(u => u.LastName)
+        @Html.TextBoxFor(u => u.LastName, new { @class = "form-control" })
+
+    </div>
+
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(u => u.Email)
+        @Html.TextBoxFor(u => u.Email, new { @class = "form-control" })
+
+    </div>
+
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(u => u.Phone)
+        @Html.TextBoxFor(u => u.Phone, new { @class = "form-control" })
+
+    </div>
+
+    <div class="mb-3 mt-3">
+        @Html.LabelFor(u => u.Resume)
+        @Html.File()
+
+    </div>
+    <input type="submit" value="Save" />
+}
+
